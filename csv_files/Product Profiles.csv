@@ -1,0 +1,12 @@
+prod_id,prod_code,prod_desc,revolve_ind,loan_amt_lmt
+-1,UNK,Unknown,U,-1
+1,1M,1st Mortgage,N,10000000
+2,2M,2nd Mortgage,N,1000000
+3,CC,Credit Card,Y,250000
+4,VL,Vehicle Loan,N,500000
+5,HECL,Home Equity Credit Line,Y,1000000
+6,SL,Student Loan,N,100000
+7,CL,Construction Loan,Y,10000000
+8,OCL,Overdraft Credit Line,Y,10000
+9,DCL,Debt Consolidation Loan,N,1000000
+10,PCL,Personal Credit Line,Y,100000
