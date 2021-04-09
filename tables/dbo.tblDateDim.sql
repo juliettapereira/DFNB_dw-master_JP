@@ -26,6 +26,10 @@ distributed under the same license terms.
 
 ******************************************************************************************************************/
 
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DateDim]') AND type in (N'U'))
+DROP TABLE [dbo].[DateDim]
+GO
+
 CREATE TABLE dbo.DateDim
 (date_id                    INT NOT NULL
 , day_date                   [DATE] NOT NULL
@@ -39,38 +43,38 @@ CREATE TABLE dbo.DateDim
 , week_start_date            [DATE] NOT NULL
 , week_start_date_id         INT NOT NULL
 , week_end_date              [DATE] NOT NULL
-, week_end_date_id           INT NULL
-, weekday_flag               BIT NULL
-, weekend_flag               BIT NULL
-, last_day_in_week_flag      BIT NULL
-, month_number               TINYINT NULL
-, month_name                 VARCHAR(10) NULL
-, month_abbreviation         CHAR(3) NULL
-, month_last_day_number      TINYINT NULL
-, month_start_date           [DATE] NULL
-, month_start_date_id        INT NULL
-, month_end_date             [DATE] NULL
-, month_end_date_id          INT NULL
-, month_end_date_previous    [DATE] NULL
-, month_end_date_previous_id INT NULL
-, last_day_in_month_flag     BIT NULL
-, quarter_number             TINYINT NULL
-, quarter_name               CHAR(6) NULL
-, quarter_code               CHAR(2) NULL
-, quarter_start_date         [DATE] NULL
-, quarter_start_date_id      INT NULL
-, quarter_end_date           [DATE] NULL
-, quarter_end_date_id        INT NULL
-, last_day_in_quarter_flag   BIT NULL
-, year_number                SMALLINT NULL
-, year_start_date            [DATE] NULL
-, year_start_date_id         INT NULL
-, year_end_date              [DATE] NULL
-, year_end_date_id           INT NULL
-, yyyymm                     INT NULL
-, last_day_in_year_flag      BIT NULL
-, holiday_ind                BIT NULL -- Challenge field
-, holiday_name               VARCHAR(50) NULL -- Challenge field
+, week_end_date_id           INT NOT NULL
+, weekday_flag               BIT NOT NULL
+, weekend_flag               BIT NOT NULL
+, last_day_in_week_flag      BIT NOT NULL
+, month_number               TINYINT NOT NULL
+, month_name                 VARCHAR(10) NOT NULL
+, month_abbreviation         CHAR(3) NOT NULL
+, month_last_day_number      TINYINT NOT NULL
+, month_start_date           [DATE] NOT NULL
+, month_start_date_id        INT NOT NULL
+, month_end_date             [DATE] NOT NULL
+, month_end_date_id          INT NOT NULL
+, month_end_date_previous    [DATE] NOT NULL
+, month_end_date_previous_id INT NOT NULL
+, last_day_in_month_flag     BIT NOT NULL
+, quarter_number             TINYINT NOT NULL
+, quarter_name               CHAR(6) NOT NULL
+, quarter_code               CHAR(2) NOT NULL
+, quarter_start_date         [DATE] NOT NULL
+, quarter_start_date_id      INT NOT NULL
+, quarter_end_date           [DATE] NOT NULL
+, quarter_end_date_id        INT NOT NULL
+, last_day_in_quarter_flag   BIT NOT NULL
+, year_number                SMALLINT NOT NULL
+, year_start_date            [DATE] NOT NULL
+, year_start_date_id         INT NOT NULL
+, year_end_date              [DATE] NOT NULL
+, year_end_date_id           INT NOT NULL
+, yyyymm                     INT NOT NULL
+, last_day_in_year_flag      BIT NOT NULL
+, holiday_ind                BIT NOT NULL -- Challenge field
+, holiday_name               VARCHAR(50) NOT NULL -- Challenge field
 , CONSTRAINT PK_DateDim PRIMARY KEY CLUSTERED(date_id ASC)
   WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 )
